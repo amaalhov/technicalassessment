@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import ModalDialog from "./ModalDialog";
+import "../styles/navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -23,18 +23,11 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          className={classes.menuButton}
-        >
+        <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" className={classes.title}>
-          NY Times Most Popular
-        </Typography>
-        <IconButton aria-label="search" color="inherit">
+        <Typography variant="h6">NY Times Most Popular</Typography>
+        <IconButton edge="end" aria-label="search" color="inherit">
           <SearchIcon />
         </IconButton>
         <IconButton
@@ -45,7 +38,9 @@ const Navbar = () => {
           <MoreIcon />
         </IconButton>
       </Toolbar>
-      <ModalDialog open={open} handleClose={handleClose} />
+      {/* <ModalDialog open={open} handleClose={handleClose} /> */}
     </AppBar>
   );
 };
+
+export default Navbar;
