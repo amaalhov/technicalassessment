@@ -21,25 +21,33 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6">NY Times Most Popular</Typography>
-        <IconButton edge="end" aria-label="search" color="inherit">
-          <SearchIcon />
-        </IconButton>
-        <IconButton
-          aria-label="display more actions"
-          edge="end"
-          color="inherit"
-        >
-          <MoreIcon />
-        </IconButton>
-      </Toolbar>
-      {/* <ModalDialog open={open} handleClose={handleClose} /> */}
-    </AppBar>
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography className={classes.title} variant="h5" noWrap>
+            Material-UI
+          </Typography>
+          <IconButton aria-label="search" color="inherit">
+            <SearchIcon />
+          </IconButton>
+          <IconButton
+            aria-label="display more actions"
+            edge="end"
+            color="inherit"
+          >
+            <MoreIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 };
 
