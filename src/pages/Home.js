@@ -33,7 +33,8 @@ const Home = () => {
     const getArticles = async () => {
       setLoading(true);
       const res = await axios.get(
-        ` http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
+        // ` http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
+        `http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=bvwH80Gwe6YiZJAWJrlMCbQrva82WzpA`
       );
       setArticles(res.data.results);
 
@@ -46,7 +47,7 @@ const Home = () => {
     <>
       <Navbar />
       <div>
-        <ArticlesList />
+        <ArticlesList loading={loading} articles={articles} />
       </div>
     </>
   );

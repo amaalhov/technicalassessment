@@ -1,20 +1,22 @@
 import react from "react";
 import Grid from "@material-ui/core/Grid";
+import Article from "./article";
 
-const ArticlesList = ({ loading, articels }) => {
+const ArticlesList = ({ loading, articles }) => {
   return (
     <>
       {loading ? (
         "loading"
       ) : (
-        <Grid
-          styles={{ backgroundColor: "red", height: "500px" }}
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-        ></Grid>
+        <div>
+          <Grid container spacing={3}>
+            {articles.map((article) => (
+              <Grid item xs={12} sm={4} key={article._id}>
+                <Article article={article} />
+              </Grid>
+            ))}
+          </Grid>
+        </div>
       )}
     </>
   );
