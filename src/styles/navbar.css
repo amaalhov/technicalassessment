@@ -1,3 +1,17 @@
-.searchIcon {
-  margin-right: 0;
+.root {
+  flex-grow: 1;
+}
+.toolbar {
+  align-items: flex-start;
+  background-color: teal;
+  /* width: 100%; */
+}
+
+.menuButton {
+  margin-right: 2px;
+}
+
+.title {
+  flex-grow: 1;
+  align-self: flex-end;
 }

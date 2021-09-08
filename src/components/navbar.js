@@ -21,19 +21,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className={classes.root}>
+    <>
       <AppBar position="static">
-        <Toolbar className={classes.toolbar}>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
+        <Toolbar className="toolbar">
+          <IconButton edge="start" className="menuButton" color="inherit">
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h5" noWrap>
-            Material-UI
+          <Typography className="title" variant="h5" noWrap>
+            NY Times Post Popular
           </Typography>
           <IconButton aria-label="search" color="inherit">
             <SearchIcon />
@@ -47,7 +42,7 @@ const Navbar = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-    </div>
+    </>
   );
 };
 
