@@ -1,21 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Grid from "@material-ui/core/Grid";
-
-// import PropTypes from "prop-types";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import "../styles/articles-list.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import Dialog from "@material-ui/core/Dialog";
+import CloseIcon from "@material-ui/icons/Close";
+import Button from "@material-ui/core/Button";
+import { DialogTitle, DialogContent, DialogActions } from "@material-ui/core";
+import Chip from "@material-ui/core/Chip";
 
 const Article = ({ article }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       {article && (
-        <div id={article._id}>
+        <div id={article._id} onClick={handleClickOpen}>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
-              {/* <Avatar>{article.byline.substring(3, 4)}</Avatar> */}
               <Avatar src={article.media[0]?.["media-metadata"][0].url} />
             </Grid>
             <Grid item xs>
@@ -38,6 +50,40 @@ const Article = ({ article }) => {
               <ArrowForwardIosIcon style={{ color: "#61646b" }} />
             </Grid>
           </Grid>
+
+          <Dialog
+            aria-labelledby="customized-dialog-title"
+            open={open}
+            onClose={handleClose}
+          >
+            <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+              {article.title}
+            </DialogTitle>
+            <DialogContent dividers>
+              <Typography gutterBottom>{article.abstract}</Typography>
+
+              <Typography gutterBottom>
+                Full Story here...{" "}
+                <a href={article.url} target="_blank">
+                  {article.url}
+                </a>
+              </Typography>
+              <Typography gutterBottom>
+                Tags
+                <Chip label={article.section} />
+                {article.subsection === "" ? (
+                  ""
+                ) : (
+                  <Chip label={article.subsection} />
+                )}
+              </Typography>
+            </DialogContent>
+            <DialogActions>
+              <Button autoFocus onClick={handleClose} color="primary">
+                Exit
+              </Button>
+            </DialogActions>
+          </Dialog>
         </div>
       )}
     </>

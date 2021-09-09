@@ -5,31 +5,17 @@ import axios from "axios";
 import instanceAxios from "../config/instance-axios";
 
 const Home = () => {
-  let age = "7";
+  let numberofarticles = "7";
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);
-
-  const [state, setState] = React.useState({
-    age: "7",
-  });
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
-    age = event.target.value;
-  };
 
   useEffect(() => {
     const getArticles = async () => {
       setLoading(true);
       const res = await instanceAxios.get(
-        `/viewed/${age}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
+        `/viewed/${numberofarticles}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
       );
       setArticles(res.data.results);
-
       setLoading(false);
     };
     getArticles();

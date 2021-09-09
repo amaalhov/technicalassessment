@@ -9,16 +9,6 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import "../styles/navbar.css";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <>
       <AppBar position="static">

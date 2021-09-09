@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# Letshego React Assessment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project had been hosted at https://assessment-amaal.web.app/ for your convenience.
 
-## Available Scripts
+## Running the project locally
 
-In the project directory, you can run:
+Clone the repository and run the below command to install dependencies. If you run into issues with the command, delete node_models folder and try again.
+
+### `npm i`
+
+After installing dependencies, run following command to launch the project on local machine
 
 ### `npm start`
 
@@ -18,6 +22,10 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm test -- --coverage --watchAll=false`
+
+Launches test runner with test coverage enabled.
 
 ### `npm run build`
 
@@ -68,3 +76,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Code coverage
+
+---------------------|---------|----------|---------|---------|-------------------
+File | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+---------------------|---------|----------|---------|---------|-------------------
+All files | 48.65 | 20 | 50 | 48.65 |  
+ src | 9.09 | 0 | 33.33 | 9.09 |  
+ App.js | 100 | 100 | 100 | 100 |  
+ index.js | 0 | 100 | 100 | 0 | 7-13  
+ reportWebVitals.js | 0 | 0 | 0 | 0 | 1-8  
+ src/components | 41.67 | 33.33 | 33.33 | 41.67 |  
+ article.js | 14.29 | 0 | 0 | 14.29 | 15-25  
+ articles-list.js | 66.67 | 100 | 50 | 66.67 | 15  
+ navbar.js | 100 | 100 | 100 | 100 |  
+ src/config | 100 | 100 | 100 | 100 |  
+ instance-axios.js | 100 | 100 | 100 | 100 |  
+ src/pages | 83.33 | 100 | 100 | 83.33 |  
+ Home.js | 83.33 | 100 | 100 | 83.33 | 18-19  
+---------------------|---------|----------|---------|---------|-------------------
