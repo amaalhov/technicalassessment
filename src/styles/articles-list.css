@@ -22,4 +22,5 @@
 
 .articleView:hover {
   cursor: pointer;
+  background-color: #d4d5d8;
 }
