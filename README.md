@@ -1,4 +1,3 @@
-# Letshego React Assessment
 
 This project had been hosted at https://assessment-amaal.web.app/ for your convenience.
 
