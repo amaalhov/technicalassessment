@@ -25,7 +25,7 @@ const Article = ({ article }) => {
   return (
     <>
       {article && (
-        <div id={article._id} onClick={handleClickOpen}>
+        <div className="articleView" id={article._id} onClick={handleClickOpen}>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
               <Avatar src={article.media[0]?.["media-metadata"][0].url} />
