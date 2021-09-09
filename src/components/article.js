@@ -15,6 +15,7 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import "../styles/article.css";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const Article = ({ article }) => {
   return (
@@ -23,12 +24,17 @@ const Article = ({ article }) => {
         <div id={article._id}>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
-              <Avatar>W</Avatar>
+              {/* <Avatar>{article.byline.substring(3, 4)}</Avatar> */}
+              <Avatar src={article.media[0]?.["media-metadata"][0].url} />
             </Grid>
             <Grid item xs>
               <Typography>
                 {article.abstract.substring(0, 50).concat("...")}
               </Typography>
+              <Typography>{article.byline}</Typography>
+            </Grid>
+            <Grid item>
+              <ArrowForwardIosIcon />
             </Grid>
           </Grid>
         </div>
