@@ -1,0 +1,20 @@
+.abstract {
+  text-align: left;
+}
+
+.article-by {
+  text-align: left;
+  color: #61646b;
+}
+
+.article-date {
+  text-align: left;
+  color: #61646b;
+  float: right;
+  flex-grow: 1;
+}
+
+.articles {
+  display: flex;
+  justify-content: center;
+}

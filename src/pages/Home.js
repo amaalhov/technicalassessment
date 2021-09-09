@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ArticlesList from "../components/articles-list";
 import Navbar from "../components/navbar";
-import { Route, Switch, NavLink } from "react-router-dom";
 import axios from "axios";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+import instanceAxios from "../config/instance-axios";
 
 const Home = () => {
   let age = "7";
@@ -33,8 +26,8 @@ const Home = () => {
     const getArticles = async () => {
       setLoading(true);
       const res = await axios.get(
-        // ` http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
-        `http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=bvwH80Gwe6YiZJAWJrlMCbQrva82WzpA`
+        `http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
+        // `http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=bvwH80Gwe6YiZJAWJrlMCbQrva82WzpA`
       );
       setArticles(res.data.results);
 

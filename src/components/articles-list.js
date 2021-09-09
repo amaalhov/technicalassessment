@@ -1,6 +1,7 @@
 import react from "react";
 import Grid from "@material-ui/core/Grid";
 import Article from "./article";
+import "../styles/articles-list.css";
 
 const ArticlesList = ({ loading, articles }) => {
   return (
@@ -8,10 +9,10 @@ const ArticlesList = ({ loading, articles }) => {
       {loading ? (
         "loading"
       ) : (
-        <div>
-          <Grid container spacing={3}>
+        <div className="articles">
+          <Grid className="articles" container spacing={3}>
             {articles.map((article) => (
-              <Grid item xs={12} sm={4} key={article._id}>
+              <Grid item xs={11} sm={11} lg={7} key={article._id}>
                 <Article article={article} />
               </Grid>
             ))}
