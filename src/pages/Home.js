@@ -25,9 +25,8 @@ const Home = () => {
   useEffect(() => {
     const getArticles = async () => {
       setLoading(true);
-      const res = await axios.get(
-        `http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
-        // `http://api.nytimes.com/svc/mostpopular/v2/viewed/${age}.json?api-key=bvwH80Gwe6YiZJAWJrlMCbQrva82WzpA`
+      const res = await instanceAxios.get(
+        `/viewed/${age}.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`
       );
       setArticles(res.data.results);
 

@@ -24,10 +24,10 @@ const Article = ({ article }) => {
               </Typography>
               <Typography>
                 <Grid container>
-                  <Grid className="article-by" xs={6} sm={6} md={6}>
+                  <Grid className="article-by" xs={8} sm={6} md={6}>
                     {article.byline}
                   </Grid>
-                  <Grid className="article-date" xs={6} sm={6} md={6}>
+                  <Grid className="article-date" xs={4} sm={6} md={6}>
                     <DateRangeIcon fontSize="small" />
                     {article.published_date}
                   </Grid>
